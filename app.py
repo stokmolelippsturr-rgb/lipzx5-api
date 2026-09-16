@@ -437,7 +437,7 @@ def check_rarity(account_id, rarity_threshold=8):
 # ---------------- ACCOUNT ALGORITHM ---------------- #
 def force_region_bind(region, jwt_token):
     try:
-        url = "https://loginbp.common.ggbluefox.com/ChooseRegion" if region.upper() in ["ME","TH"] else "https://loginbp.ggpolarbear.com/ChooseRegion"
+        url = "https://loginbp.common.ggbluefox.com/ChooseRegion" if region.upper() in ["ME","TH"] else "https://loginbp.ppmainecoonghj.com/ChooseRegion"
         region_code = "RU" if region.upper() == "CIS" else region.upper()
         proto_data = build_proto({1: region_code})
         encrypted = encrypt_api(proto_data.hex())
@@ -463,7 +463,7 @@ def major_login(uid, password, access_token, open_id, region, is_ghost):
             b'\xb2\x01 1d8ec0240ede109973f3321b9354b44d\xba\x01\x014\xc2\x01\x08Handheld\xca\x01\x10Asus ASUS_I005DA\xea\x01@afcfbf13334be42036e4f742c80b956344bed760ac91b3aff9b607a610ab4390\xf0\x01\x01\xca\x02\nATM Mobils\xd2\x02\x04WIFI\xca\x03 7428b253defc164018c604a1ebbfebdf\xe0\x03\xa8\x81\x02\xe8\x03\xf6\xe5\x01\xf0\x03\xaf\x13\xf8\x03\x84\x07\x80\x04\xe7\xf0\x01\x88\x04\xa8\x81\x02\x90\x04\xe7\xf0\x01\x98\x04\xa8\x81\x02\xc8\x04\x01\xd2\x04=/data/app/com.dts.freefireth-PdeDnOilCSFn37p1AH_FLg==/lib/arm\xe0\x04\x01\xea\x04_2087f61c19f57f2af4e7feff0b24d9d9|/data/app/com.dts.freefireth-PdeDnOilCSFn37p1AH_FLg==/base.apk\xf0\x04\x03\xf8\x04\x01\x8a\x05\x0232\x9a\x05\n2019118692\xb2\x05\tOpenGLES2\xb8\x05\xff\x7f\xc0\x05\x04\xe0\x05\xf3F\xea\x05\x07android\xf2\x05pKqsHT5ZLWrYljNb5Vqh//yFRlaPHSO9NWSQsVvOmdhEEn7W+VHNUK+Q+fduA3ptNrGB0Ll0LRz3WW0jOwesLj6aiU7sZ40p8BfUE/FI/jzSTwRe2\xf8\x05\xfb\xe4\x06\x88\x06\x01\x90\x06\x01\x9a\x06\x014\xa2\x06\x014\xb2\x06"GQ@O\x00\x0e^\x00D\x06UA\x0ePM\r\x13hZ\x07T\x06\x0cm\\V\x0ejYV;\x0bU5'
         ]
         payload = b''.join(payload_parts)
-        url = "https://loginbp.ggpolarbear.com/MajorLogin" if is_ghost or region.upper() not in ["ME","TH"] else "https://loginbp.common.ggbluefox.com/MajorLogin"
+        url = "https://loginbp.ppmainecoonghj.com/MajorLogin" if is_ghost or region.upper() not in ["ME","TH"] else "https://loginbp.common.ggbluefox.com/MajorLogin"
         headers = {
             "Content-Type": "application/x-www-form-urlencoded",
             "ReleaseVersion": "OB55",
@@ -503,7 +503,7 @@ def major_login(uid, password, access_token, open_id, region, is_ghost):
 
 def major_register(access_token, open_id, field, uid, password, region, account_name, password_prefix, is_ghost, threshold):
     try:
-        url = "https://loginbp.ggpolarbear.com/MajorRegister" if is_ghost or region.upper() not in ["ME","TH"] else "https://loginbp.common.ggbluefox.com/MajorRegister"
+        url = "https://loginbp.ppmainecoonghj.com/MajorRegister" if is_ghost or region.upper() not in ["ME","TH"] else "https://loginbp.common.ggbluefox.com/MajorRegister"
         name = generate_random_name(account_name)
         headers = {
             "Content-Type": "application/x-www-form-urlencoded",
